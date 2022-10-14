@@ -5,10 +5,10 @@
 PCE                                                             D. Dhody
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                               S. Turner
-Expires: 16 April 2023                                             sn3rd
+Expires: 17 April 2023                                             sn3rd
                                                               R. Housley
                                                           Vigil Security
-                                                         13 October 2022
+                                                         14 October 2022
 
 
                            PCEPS with TLS 1.3
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 April 2023.
+   This Internet-Draft will expire on 17 April 2023.
 
 Copyright Notice
 
@@ -81,6 +81,10 @@ Table of Contents
    [RFC5246].  This document describes defines how to protect PCEP
    messages with TLS 1.3 [I-D.ietf-tls-rfc8446bis].
 
+   [Editor's Note: The reference to [I-D.ietf-tls-rfc8446bis] could be
+   changed to RFC 8446 incase the progress of the bis draft is slower
+   than the progression of this document.]
+
    This document addresses cipher suites and the use of early data,
    which is also known as 0-RTT data.  All other provisions set forth in
    [RFC8253] are unchanged, including connection initiation, message
@@ -99,11 +103,13 @@ Table of Contents
 
    Early data (aka 0-RTT data) is a mechanism defined in TLS 1.3
    [I-D.ietf-tls-rfc8446bis] that allows a client to send data ("early
-   data") as part of the first flight of messages to a server.  Early
-   data is permitted by TLS 1.3 when the client and server share a Pre-
-   Shared Key (PSK), either obtained externally or via a previous
-   handshake.  The client uses the PSK to authenticate the server and to
-   encrypt the early data.
+   data") as part of the first flight of messages to a server.  Note
+   that TLS 1.3 can be used without early data as per Appendix F.5 of
+   [I-D.ietf-tls-rfc8446bis].  Infact, early data is permitted by TLS
+   1.3 only when the client and server share a Pre-Shared Key (PSK),
+   either obtained externally or via a previous handshake.  The client
+   uses the PSK to authenticate the server and to encrypt the early
+   data.
 
    As noted in Section 2.3 of [I-D.ietf-tls-rfc8446bis], the security
    properties for early data are weaker than those for subsequent TLS-
@@ -111,20 +117,20 @@ Table of Contents
    there is no protection against the replay of early data between
    connections.  Appendix E.5 of [I-D.ietf-tls-rfc8446bis] requires
    applicaitons not use early data without a profile that defines its
-   use.  This document specifies that PCEPS implementations MUST NOT use
-   early data.
+   use.  This document specifies that PCEPS implementations that support
+   TLS 1.3 MUST NOT use early data.
 
 4.  Cipher Suites
 
-   Implementations MUST support TLS 1.3 [I-D.ietf-tls-rfc8446bis], and
-   implementation are REQUIRED to support the mandatory-to-implement
-   cipher suites listed in Section 9.1 of [I-D.ietf-tls-rfc8446bis].
+   Implementations that support TLS 1.3 [I-D.ietf-tls-rfc8446bis] are
+   REQUIRED to support the mandatory-to-implement cipher suites listed
+   in Section 9.1 of [I-D.ietf-tls-rfc8446bis].
 
-   Implementations MAY implement additional TLS cipher suites that
-   provide mutual authentication and confidentiality, which are required
-   for PCEP.
+   Implementations that support TLS 1.3 MAY implement additional TLS
+   cipher suites that provide mutual authentication and confidentiality,
+   which are required for PCEP.
 
-   Implementations SHOULD follow the recommendations given in
+   PCEPS Implementations SHOULD follow the recommendations given in
    [I-D.ietf-uta-rfc7525bis].
 
  So, this is what {{Section 9.1 of I-D.ietf-tls-rfc8446bis}} says:
@@ -265,7 +271,7 @@ Table of Contents
 
 Acknowledgments
 
-   We would like to thank the following people TBD.
+   We would like to thank Adrian Farrel for their review.
 
 Authors' Addresses
 
