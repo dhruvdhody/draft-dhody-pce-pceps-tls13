@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-10-18T02:13:39.521014+00:00",
+  "timestamp": "2022-10-20T02:10:32.934998+00:00",
   "repo": "dhruvdhody/draft-dhody-pce-pceps-tls13",
   "labels": [
     {
@@ -92,6 +92,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOIJbggs5BIQzf",
+      "title": "s/Infact/In Fact",
+      "url": "https://github.com/dhruvdhody/draft-dhody-pce-pceps-tls13/pull/2",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-10-19T17:43:00Z",
+      "updatedAt": "2022-10-19T18:31:13Z",
+      "baseRepository": "dhruvdhody/draft-dhody-pce-pceps-tls13",
+      "baseRefName": "main",
+      "baseRefOid": "8acfbbc5861494449de5b56fbd41c6a7172146b3",
+      "headRepository": "dhruvdhody/draft-dhody-pce-pceps-tls13",
+      "headRefName": "seanturner-infact",
+      "headRefOid": "fbb223f22d5d0b60ed46c85a475ab9ba92c18619",
+      "closedAt": "2022-10-19T18:31:13Z",
+      "mergedAt": "2022-10-19T18:31:13Z",
+      "mergedBy": "dhruvdhody",
+      "mergeCommit": {
+        "oid": "283ebb2530fdaa09120f7501fad28f8c7779ad46"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
